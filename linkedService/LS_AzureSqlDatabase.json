@@ -1,0 +1,23 @@
+{
+	"name": "LS_AzureSqlDatabase",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "kingsbridge-medical-group-server.database.windows.net",
+			"database": "Sql-db-Kingsbridge-Medical-Group",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "Kingsbridge-Medical-Group",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_postgrey_AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "Azuresql-Password"
+			}
+		}
+	}
+}
