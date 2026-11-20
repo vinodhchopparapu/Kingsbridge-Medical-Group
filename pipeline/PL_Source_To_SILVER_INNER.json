@@ -74,8 +74,22 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "PostgreSqlV2Source",
+						"query": {
+							"value": "SELECT * FROM PUBLIC.@{activity('Read_Table_Details').output.firstRow.source_table_name}",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00"
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "PostgreSqlTable1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
